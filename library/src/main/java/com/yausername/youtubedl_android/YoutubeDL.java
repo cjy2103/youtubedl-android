@@ -29,6 +29,7 @@ public class YoutubeDL {
     private static final String pythonLibName = "libpython.zip.so";
     private static final String pythonDirName = "python";
     private static final String ffmpegDirName = "ffmpeg";
+    private static final String atomicparsleyDirName = "atomicparsley";
     protected static final String youtubeDLDirName = "youtube-dl";
     private static final String youtubeDLBin = "__main__.py";
     protected static final String youtubeDLFile = "youtube_dl.zip";
@@ -63,11 +64,13 @@ public class YoutubeDL {
         pythonPath = new File(binDir, pythonBinName);
         File pythonDir = new File(packagesDir, pythonDirName);
         File ffmpegDir = new File(packagesDir, ffmpegDirName);
+        File atomicparsleyDir = new File(packagesDir, atomicparsleyDirName);
 
         File youtubeDLDir = new File(baseDir, youtubeDLDirName);
         youtubeDLPath = new File(youtubeDLDir, youtubeDLBin);
 
-        ENV_LD_LIBRARY_PATH = pythonDir.getAbsolutePath() + "/usr/lib" + ":" + ffmpegDir.getAbsolutePath() + "/usr/lib";
+        ENV_LD_LIBRARY_PATH = pythonDir.getAbsolutePath() + "/usr/lib" + ":" + ffmpegDir.getAbsolutePath() + "/usr/lib"
+        + ":" + atomicparsleyDir.getAbsolutePath() + "/usr/lib";
         ENV_SSL_CERT_FILE = pythonDir.getAbsolutePath() + "/usr/etc/tls/cert.pem";
         ENV_PYTHONHOME = pythonDir.getAbsolutePath() + "/usr";
 

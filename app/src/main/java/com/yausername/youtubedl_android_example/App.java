@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.yausername.atomicparsley.AtomicParsley;
 import com.yausername.ffmpeg.FFmpeg;
 import com.yausername.youtubedl_android.YoutubeDL;
 import com.yausername.youtubedl_android.YoutubeDLException;
@@ -58,5 +59,6 @@ public class App extends Application {
     private void initLibraries() throws YoutubeDLException {
         YoutubeDL.getInstance().init(this);
         FFmpeg.getInstance().init(this);
+        AtomicParsley.getInstance().init(this);
     }
 }
